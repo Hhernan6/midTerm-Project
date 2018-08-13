@@ -530,6 +530,9 @@ HOME PAGE BEGINNING CONTENT
         margin: 15px 0 25px 0;
         font-family: $mainFonts;
         color: #424242;
+        &:hover {
+            color: #303F9F;
+        }
     }
     span {
         text-transform: $upperCase;
@@ -973,24 +976,27 @@ ARTICLE NAV
 }
 .secondArticle__section {
     width: 670px;
-    height: 533px;
+    height: 576px;
     margin: 40px 0 50px 99px;
     h2 {
         font-size: 30px;
         font-family: $SecondPageFont;
         
     }
-    h3 {
-        font-size: 30px;
-        font-family: $SecondPageFont;
-        margin-top: 75px;
-    }
+
     p {
         font-size: 21px;
         line-height: 33px;
         font-family: Georgia, 'Times New Roman', Times, serif;
     }
     table {
+        caption {
+            font-size: 30px;
+            font-family: $SecondPageFont;
+            margin: 75px 0 48px 0;
+            text-align: left;
+            font-weight: bold;
+        }
         width: 670px;
         border: 1px solid #CCCCCC;
         border-collapse: collapse;

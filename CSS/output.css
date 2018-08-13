@@ -509,6 +509,9 @@ HOME PAGE BEGINNING CONTENT
   font-family: "RVMontserrat";
   color: #424242;
 }
+.inner__content h2:hover {
+  color: #303F9F;
+}
 .inner__content span {
   text-transform: uppercase;
   height: 25px;
@@ -938,17 +941,12 @@ ARTICLE NAV
 
 .secondArticle__section {
   width: 670px;
-  height: 533px;
+  height: 576px;
   margin: 40px 0 50px 99px;
 }
 .secondArticle__section h2 {
   font-size: 30px;
   font-family: "Tahoma";
-}
-.secondArticle__section h3 {
-  font-size: 30px;
-  font-family: "Tahoma";
-  margin-top: 75px;
 }
 .secondArticle__section p {
   font-size: 21px;
@@ -960,6 +958,13 @@ ARTICLE NAV
   border: 1px solid #CCCCCC;
   border-collapse: collapse;
   font-family: "Tahoma";
+}
+.secondArticle__section table caption {
+  font-size: 30px;
+  font-family: "Tahoma";
+  margin: 75px 0 48px 0;
+  text-align: left;
+  font-weight: bold;
 }
 .secondArticle__section table th {
   padding: 14px 12px;
