@@ -333,6 +333,10 @@ template {
 /********
 VARIABLES
 *********/
+body {
+  margin: 0;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -380,7 +384,6 @@ NAV STYLING
   font-family: "RVMontserrat";
   font-weight: 100;
   letter-spacing: 0.86px;
-  padding-bottom: 10px;
 }
 .mainNav ul li a::after {
   content: "";
@@ -392,6 +395,9 @@ NAV STYLING
 }
 .mainNav ul li a:hover::after {
   width: 100%;
+}
+.mainNav ul li .mainNav--active {
+  border-bottom: 1px solid white;
 }
 
 /**************
@@ -568,7 +574,7 @@ OTHER ARTIClES STYLING
   width: 370px;
   height: 549px;
   box-shadow: 0 0 45px 0 rgba(0, 0, 0, 0.15);
-  transition: transform 500ms ease;
+  transition: transform 300ms ease;
 }
 .row .row__cards:hover {
   transform: scale(1.1);
@@ -786,7 +792,7 @@ footer {
   content: "";
   display: block;
   width: 0;
-  height: 2px;
+  height: 1px;
   background: white;
   transition: width 0.2s ease-out;
 }
@@ -865,6 +871,12 @@ MAIN NAV OF SECOND PAGE
   background-image: linear-gradient(to right, #3f51b5, #1729ac);
   z-index: 100;
 }
+.second__mainNav ul:hover li a {
+  opacity: 0.5;
+}
+.second__mainNav ul:hover li a:hover {
+  opacity: 1;
+}
 .second__mainNav ul {
   display: flex;
   justify-content: flex-end;
@@ -895,6 +907,9 @@ MAIN NAV OF SECOND PAGE
 }
 .second__mainNav ul li a:hover::after {
   width: 100%;
+}
+.second__mainNav ul .second__mainNav--active {
+  border-bottom: 1px solid white;
 }
 
 /*************** 
@@ -997,43 +1012,43 @@ ARTICLE NAV
   border-bottom: #3949AB solid 2px;
 }
 
-.secondArticle__section {
+.article__SecondContent {
   width: 670px;
   height: 576px;
   margin: 40px 0 50px 99px;
 }
-.secondArticle__section h2 {
+.article__SecondContent h2 {
   font-size: 30px;
   font-family: "Tahoma";
 }
-.secondArticle__section p {
+.article__SecondContent p {
   font-size: 21px;
   line-height: 33px;
   font-family: Georgia, "Times New Roman", Times, serif;
 }
-.secondArticle__section table {
+.article__SecondContent table {
   width: 670px;
   border: 1px solid #CCCCCC;
   border-collapse: collapse;
   font-family: "Tahoma";
 }
-.secondArticle__section table caption {
+.article__SecondContent table caption {
   font-size: 30px;
   font-family: "Tahoma";
   margin: 75px 0 48px 0;
   text-align: left;
   font-weight: bold;
 }
-.secondArticle__section table th {
+.article__SecondContent table th {
   padding: 14px 12px;
   background-color: #F5F5F5;
 }
-.secondArticle__section table tr {
+.article__SecondContent table tr {
   border: 1px solid #CCCCCC;
   border-collapse: collapse;
   padding: 14px 12px;
 }
-.secondArticle__section table tr td {
+.article__SecondContent table tr td {
   border: 1px solid #CCCCCC;
   border-collapse: collapse;
   text-align: center;
@@ -1041,35 +1056,35 @@ ARTICLE NAV
   color: #333333;
 }
 
-.thirdArticle__content {
+.article__ThirdContent {
   margin: 50px 0 0 99px;
   width: 670px;
 }
-.thirdArticle__content span {
+.article__ThirdContent span {
   color: #3949AB;
 }
-.thirdArticle__content h2 {
+.article__ThirdContent h2 {
   font-size: 30px;
   margin-bottom: 6px;
   font-family: "Tahoma";
 }
-.thirdArticle__content h3 {
+.article__ThirdContent h3 {
   font-size: 21px;
   margin: 0;
   font-family: "Tahoma";
   color: #757575;
   font-weight: normal;
 }
-.thirdArticle__content p {
+.article__ThirdContent p {
   font-size: 21px;
   line-height: 33px;
   margin-top: 30px;
   font-family: Georgia, "Times New Roman", Times, serif;
 }
-.thirdArticle__content figure {
+.article__ThirdContent figure {
   margin-left: 0;
 }
-.thirdArticle__content figure figcaption {
+.article__ThirdContent figure figcaption {
   text-align: center;
   color: #757575;
   margin-top: 9px;
