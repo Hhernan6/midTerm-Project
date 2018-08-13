@@ -264,7 +264,7 @@ OTHER ARTIClES STYLING
         box-shadow: 0 0 45px 0 rgba(0, 0, 0, 0.15);
         transition: transform 300ms ease;
         &:hover {
-           transform: scale(1.1);
+           transform: scale(1.07);
         }
     
     }
@@ -483,9 +483,10 @@ footer {
 }
 .footer__navs--socialMedia {
     display: flex;
-    margin: 75px 142px 0 934px;
+    margin: 69px 142px 0 934px;
     .footer-logo {
         margin-right: 30px;
+
     }
     li {
         margin: 10px 0;

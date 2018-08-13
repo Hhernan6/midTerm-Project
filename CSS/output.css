@@ -577,7 +577,7 @@ OTHER ARTIClES STYLING
   transition: transform 300ms ease;
 }
 .row .row__cards:hover {
-  transform: scale(1.1);
+  transform: scale(1.07);
 }
 
 .card--content {
@@ -802,7 +802,7 @@ footer {
 
 .footer__navs--socialMedia {
   display: flex;
-  margin: 75px 142px 0 934px;
+  margin: 69px 142px 0 934px;
 }
 .footer__navs--socialMedia .footer-logo {
   margin-right: 30px;
