@@ -416,7 +416,7 @@ NAV STYLING
             font-weight: 100;
             letter-spacing: 0.86px;
             padding-bottom: 10px;
-            @include slidingLinks();
+            @include slidingLinks(); 
         }
       }
     }
