@@ -348,6 +348,27 @@
 /********
 VARIABLES
 *********/
+@mixin slidingLinks() {
+    &::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 1px;
+        background:white;
+        transition: width .2s ease-out; 
+    }
+    &:hover::after {
+       width: 100%;    
+    }    
+}
+@mixin linkOpacity() {
+    ul:hover li a {
+        opacity: 0.5;
+    }
+    ul:hover li a:hover {
+        opacity: 1;
+    }
+}
 $upperCase: uppercase;
 $mainFonts: 'RVMontserrat';
 $mainGrayColor: #757575;
@@ -374,15 +395,18 @@ NAV STYLING
     display: flex;
     align-items: center;
     // @include padding(top, 20px);
+    @include linkOpacity();
     ul {
         display: flex;
         justify-content: flex-end;
         align-items: center;
         width: 100%;
         padding-right: 11px;
+
       li  {
           list-style: none;
           margin: 18px 18px;
+
           a {
             font-size: 12px;
             text-transform: $upperCase;
@@ -391,18 +415,8 @@ NAV STYLING
             font-family: $mainFonts;
             font-weight: 100;
             letter-spacing: 0.86px;
-            &::after {
-                content: '';
-                display: block;
-                width: 0;
-                height: 2px;
-                background:white;
-                transition: width .2s ease-out;
-            }
-            &:hover::after {
-               width: 100%;
-             
-            }
+            padding-bottom: 10px;
+            @include slidingLinks();
         }
       }
     }
@@ -476,6 +490,7 @@ HOME BLOG NAV STYLING
             text-transform: $upperCase;
             font-family: $mainFonts;
             letter-spacing: 0.75px;
+            transition: 200ms ease;
             &:hover {
                 border-bottom: #303F9F 3px solid;
                 color: #303F9F;
@@ -493,6 +508,7 @@ HOME BLOG NAV STYLING
         text-transform: $upperCase;
         font-family: $mainFonts;
         border-radius: 2px;
+        outline: none;
         &:hover {
            background-color: #303F9F;
 
@@ -546,6 +562,10 @@ HOME PAGE BEGINNING CONTENT
         font-family: $mainFonts;
         font-weight: 300;
         margin: 0;
+            &:hover {
+                background-color: #3949AB;
+                color: white;
+            }
     }
     p {
         line-height: 30px;
@@ -579,7 +599,7 @@ OTHER ARTIClES STYLING
         width: 370px;
         height: 549px;
         box-shadow: 0 0 45px 0 rgba(0, 0, 0, 0.15);
-        transition: transform 2s ease-out;
+        transition: transform 500ms ease;
         &:hover {
            transform: scale(1.1);
         }
@@ -606,6 +626,10 @@ OTHER ARTIClES STYLING
         font-size: 12px;
         font-family: $mainFonts;
         font-weight: 100;
+        &:hover {
+            background-color: #3949AB;
+            color: white;
+        }
     }
     p {
         margin: 0 22px 42px 30px;
@@ -639,7 +663,7 @@ OTHER ARTIClES STYLING
 }
 .author__content {
     display: flex;
-    border-top: #D8D8D8 solid 1px;
+    border-top: 1px solid rgba(238, 238, 238, 100%);
     height: 80px;
     img {
         margin: 0 10px 0 30px;
@@ -667,7 +691,7 @@ OTHER ARTIClES STYLING
 
 .fourthAuthor__content {
     display: flex;
-    border-top: #D8D8D8 solid 1px;
+    border-top: 1px solid rgba(238, 238, 238, 100%);
     margin-top: 42px;
     height: 80px;
     img {
@@ -699,7 +723,7 @@ OTHER ARTIClES STYLING
 }
 .sixthAuthor__content{
     display: flex;
-    border-top: #D8D8D8 solid 1px;
+    border-top: 1px solid rgba(238, 238, 238, 100%);
     margin: 0;
     height: 80px;
     img {
@@ -732,8 +756,11 @@ OTHER ARTIClES STYLING
     width: 1171px;
     margin: 76px 134px 94px 134px;
     hr {
+        height: 1px;
         width: 401px;
-        color: #D8D8D8;
+        background: rgba(238, 238, 238, 100%);
+        border: 0;
+        
     }
     button {
         font-size: 14px; 
@@ -745,6 +772,9 @@ OTHER ARTIClES STYLING
         font-family: $mainFonts;
         text-transform: $upperCase;
         border-radius: 2px;
+        &:hover {
+            background-color: #303F9F;
+        }
     }
 }
 /***************
@@ -771,25 +801,38 @@ footer {
 .footer__navs--left {
     width: 136px;
     height: 175px;
-    margin: 70px 0 0 135px;
-    li {
-        width: 144px;
+    margin: 40px 0 0 135px;
+    @include linkOpacity();
+    ul {
+        width: 200px;
+            li {
+                display: inline-block;
      line-height: 33px;
         a {
             font-family: $mainFonts;
             letter-spacing: 1.31px;
             font-weight: 100;
-            &:hover {
-                border-bottom: white 2px solid;
+            padding-bottom: 5px;
+            &::after {
+                content: '';
+                display: block;
+                width: 0;
+                height: 2px;
+                background:white;
+                transition: width .2s ease-out;
+            }
+            &:hover::after {
+               width: 100%;          
             }
         } 
+    }
     }
 }
 .footer__navs--socialMedia {
     display: flex;
     margin: 75px 142px 0 934px;
     .footer-logo {
-        margin-right: 44px;
+        margin-right: 30px;
     }
     li {
         margin: 10px 0;
@@ -803,6 +846,7 @@ footer {
     .bottom__nav--leftLink {
         border: none;
     }
+    @include linkOpacity();
     ul {
         display: flex;
         justify-content: center;
@@ -817,9 +861,7 @@ footer {
                 font-family: $mainFonts;
                 font-weight: 100;
                 letter-spacing: 1px;
-                &:hover {
-                    border-bottom: white 2px solid;
-                }
+                @include slidingLinks();
             }
         }   
      }
@@ -843,6 +885,8 @@ MAIN NAV OF SECOND PAGE
     display: flex;
     align-items: center;
     background-image: linear-gradient(to right, rgb(63,81,181), rgb(23, 41, 172));
+    z-index: 100;
+
     // @include padding(top, 20px);
     ul {
         display: flex;
@@ -861,18 +905,7 @@ MAIN NAV OF SECOND PAGE
             font-family: $mainFonts;
             font-weight: 100;
             letter-spacing: 0.86px;
-            &::after {
-                content: '';
-                display: block;
-                width: 0;
-                height: 2px;
-                background:white;
-                transition: width .2s ease-out;
-            }
-            &:hover::after {
-               width: 100%;
-             
-            }
+            @include slidingLinks();
         }
       }    
     }
@@ -968,11 +1001,11 @@ ARTICLE NAV
         a {
             color: #3949AB;
             font-family: $SecondPageFont;
+            &:hover {
+                border-bottom: #3949AB solid 2px;
+            }
         }
     }
-    
-
-    
 }
 .secondArticle__section {
     width: 670px;
@@ -1040,7 +1073,8 @@ ARTICLE NAV
     p {
         font-size: 21px;
         line-height: 33px;
-        margin-top: 30px
+        margin-top: 30px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
     }
     figure {
         margin-left: 0;
@@ -1052,8 +1086,9 @@ ARTICLE NAV
     }
 }
 .bottom__content {
-    width: 670px;
+    width: 730px;
     height: 600px;
+
     
     .bottom__content--qoute {
     font-size: 28px;
@@ -1088,7 +1123,7 @@ ARTICLE NAV
     }
 }
 .relatedArticles {
-    margin: 60px 0 100px 0;
+    margin: 75px 0 100px 0;
     h2 {
         margin-left: 135px;
         font-family: $SecondPageFont;
