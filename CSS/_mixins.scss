@@ -1,0 +1,64 @@
+@mixin slidingLinks() {
+    &::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 1px;
+        background:white;
+        transition: width .2s ease-out; 
+    }
+    &:hover::after {
+       width: 100%;    
+      
+    }    
+}
+@mixin linkOpacity() {
+    ul:hover li a {
+        opacity: 0.5;
+    }
+    ul:hover li a:hover {
+        opacity: 1;
+    }
+}
+
+/**********
+MAIN NAV OF SECOND PAGE
+***********/
+.second__mainNav {
+    position: fixed;
+    top: 0;
+    width: 1440px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    background-image: linear-gradient(to right, rgb(63,81,181), rgb(23, 41, 172));
+    z-index: 100;
+    @include linkOpacity();
+
+    // @include padding(top, 20px);
+    ul {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+        padding-right: 11px;
+        
+      li  {
+          list-style: none;
+          margin: 18px 18px;
+          a {
+            font-size: 12px;
+            text-transform: $upperCase;
+            color: white;
+            text-decoration: none;
+            font-family: $mainFonts;
+            font-weight: 100;
+            letter-spacing: 0.86px;
+            @include slidingLinks();
+        }
+      }
+      .second__mainNav--active {
+          border-bottom: 1px solid white;
+      }    
+    }
+}
